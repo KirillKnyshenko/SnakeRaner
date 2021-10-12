@@ -65,10 +65,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 451a05080177e5246908213df41d9ec2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speedLR: 25
+  speedLR: 5
   speedForward: 10
   speedParts: 10
   parts: []
+  isFever: 0
   prefabPlayerPart: {fileID: 8852637642715276763, guid: 6d60f171b0b7d1d4f835f346bf27ced6, type: 3}
 --- !u!65 &4941018118883982562
 BoxCollider:

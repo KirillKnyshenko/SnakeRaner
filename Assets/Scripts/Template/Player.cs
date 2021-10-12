@@ -28,7 +28,7 @@ public class Player : MonoBehaviour
         rb.isKinematic = !(GameManager.instance.gameStage == GameStage.Game);
         if (GameManager.instance.gameStage == GameStage.Game)
         {
-            if (Input.GetKey(KeyCode.Mouse0))
+            if (Input.GetKey(KeyCode.Mouse0) && !Input.GetKeyDown(KeyCode.Mouse0))
             {
                 transform.Translate(Vector3.right * Input.GetAxis("Mouse X") * speedLR * Time.deltaTime);
                 transform.position = new Vector3(Mathf.Clamp(transform.position.x, -2.5f, 2.5f), transform.position.y, transform.position.z);

@@ -71,7 +71,7 @@ public class Player : MonoBehaviour
             other.transform.gameObject.AddComponent<EatedObject>().player = this;
             // Обновляется счётчики
             UIManager.instance.UpdateText();
-            //other.transform.tag = "Untagged";
+            other.transform.tag = "Untagged";
         }
     }
 

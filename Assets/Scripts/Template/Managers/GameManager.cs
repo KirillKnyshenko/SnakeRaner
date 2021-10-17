@@ -164,12 +164,11 @@ public class GameManager : MonoBehaviour
     }
     public static void Restart()
     {
-        OnLevelEnd();
+        AdsInitializer.ShownInterstitialAds();
         SceneManager.LoadScene(0);
     }
     public static void NextLevel()
     {
-        OnLevelEnd();
         var data = GameDataObject.GetMain();
         data.saves.SetPref(Prefs.Level, (int)data.saves.GetPref(Prefs.Level) + 1);
         data.saves.SetLevel((int)data.saves.GetPref(Prefs.Level));

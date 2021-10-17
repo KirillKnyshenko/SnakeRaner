@@ -14,7 +14,7 @@ public class Fever : MonoBehaviour
 
     void Update()
     {
-        if (timeFever > 0)
+        if (timeFever > 0 && GameManager.instance.gameStage == GameStage.Game)
         {
             timeFever -= Time.deltaTime;
             player.enabled = false;

@@ -19,6 +19,7 @@ MonoBehaviour:
     startByTap: 1
     levelList:
     - {fileID: 4743487555137618502, guid: a56b1b407fee1464d8436e2c95e39909, type: 3}
+    - {fileID: 4743487555137618502, guid: 379dcfc7e2fb5674dacc6316a347b773, type: 3}
   colors:
   - colorName: Red
     color: {r: 1, g: 0, b: 0, a: 0}

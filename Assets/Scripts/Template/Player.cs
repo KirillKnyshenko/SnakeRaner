@@ -14,6 +14,7 @@ public class Player : MonoBehaviour
     GameDataObject gdo;
     ChangeColor changeColor;
     Rigidbody rb;
+
     private void Start()
     {
         rb = GetComponent<Rigidbody>();

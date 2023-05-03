@@ -1,18 +1,32 @@
 using UnityEngine;
 using UnityEngine.Advertisements;
 
-public class AdsInitializer : MonoBehaviour
+public class AdsInitializer : MonoBehaviour, IUnityAdsInitializationListener
 {
+    private const string _gameID = "4410523";
+    [SerializeField] bool _testMode = true;
+
     void Awake()
     {
-        Advertisement.Initialize("4410523", false);
+        InitializeAds();
+    }
+ 
+    public void InitializeAds()
+    {
+        if (!Advertisement.isInitialized && Advertisement.isSupported)
+        {
+            Advertisement.Initialize(_gameID, _testMode, this);
+        }
     }
 
-    public static void ShownInterstitialAds()
+ 
+    public void OnInitializationComplete()
     {
-        if (Advertisement.IsReady())
-        {
-            Advertisement.Show("Interstitial_Android");
-        }
+        Debug.Log("Unity Ads initialization complete.");
+    }
+ 
+    public void OnInitializationFailed(UnityAdsInitializationError error, string message)
+    {
+        Debug.Log($"Unity Ads Initialization Failed: {error.ToString()} - {message}");
     }
 }

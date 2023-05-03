@@ -8,26 +8,26 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
         
-    //Юзабельное
+    //ГћГ§Г ГЎГҐГ«ГјГ­Г®ГҐ
     public static LevelManager currentLevel { get; private set; }
     public static GameObject player { get; private set; }
     public static Canvas canvas { get; private set; }
 
     public GameStage gameStage;
     
-    //Данные
+    //Г„Г Г­Г­Г»ГҐ
     public GameDataObject.GDOMain data;
     GameDataObject gdata;
 
 
 
-    /// Эвенты 
-    public static event System.Action StartGame = delegate { }; //Когда gameStage становится Game
-    public static event System.Action EndGame = delegate { }; //Когда gameStage становится EndWait
+    /// ГќГўГҐГ­ГІГ» 
+    public static event System.Action StartGame = delegate { }; //ГЉГ®ГЈГ¤Г  gameStage Г±ГІГ Г­Г®ГўГЁГІГ±Гї Game
+    public static event System.Action EndGame = delegate { }; //ГЉГ®ГЈГ¤Г  gameStage Г±ГІГ Г­Г®ГўГЁГІГ±Гї EndWait
 
-    public static event System.Action TapToPlayUI = delegate { }; //Когда игрок тапает в первый раз при data.startByTap
-    
+    public static event System.Action TapToPlayUI = delegate { }; //ГЉГ®ГЈГ¤Г  ГЁГЈГ°Г®ГЄ ГІГ ГЇГ ГҐГІ Гў ГЇГҐГ°ГўГ»Г© Г°Г Г§ ГЇГ°ГЁ data.startByTap
 
+    [SerializeField] private InterstitialAd _interstitialAd;
 
     #region Mono
     public void Awake()
@@ -35,8 +35,9 @@ public class GameManager : MonoBehaviour
         StartGame = delegate { };
         EndGame = delegate { };
         TapToPlayUI = delegate { };
-
+        
         QualitySettings.SetQualityLevel(QualitySettings.names.Length - 1);
+        _interstitialAd.LoadAd();
     }
     private void Start()
     {
@@ -57,7 +58,7 @@ public class GameManager : MonoBehaviour
     #endregion
 
     #region Gameplay
-    public void TapToStartCheck() //Проверка на вервый тап 
+    public void TapToStartCheck() //ГЏГ°Г®ГўГҐГ°ГЄГ  Г­Г  ГўГҐГ°ГўГ»Г© ГІГ ГЇ 
     {
         if (data.startByTap)
         {
@@ -73,7 +74,7 @@ public class GameManager : MonoBehaviour
             }
         }
     }
-    public void LoadLevel() //Создание уровня 
+    public void LoadLevel() //Г‘Г®Г§Г¤Г Г­ГЁГҐ ГіГ°Г®ГўГ­Гї 
     {
         var stdData = GameDataObject.GetMain(true);
         if (stdData.saves == null){ Debug.LogError("Yaroslav: Saves Not Found"); return; }
@@ -81,7 +82,7 @@ public class GameManager : MonoBehaviour
 
         stdData.saves.SetLevel((int)stdData.saves.GetPref(Prefs.Level));
         currentLevel = Instantiate(stdData.levelList[(int)stdData.saves.GetPref(Prefs.Level)]);
-        //Игрок и канвас
+        //Г€ГЈГ°Г®ГЄ ГЁ ГЄГ Г­ГўГ Г±
         SpawnPlayer();
         SpawnCanvas();
     } 
@@ -94,7 +95,7 @@ public class GameManager : MonoBehaviour
             if (currentLevel.playerSpawn != null)
             {
                 spawnPoint = currentLevel.playerSpawn.transform.position;
-                //Настройка игрока
+                //ГЌГ Г±ГІГ°Г®Г©ГЄГ  ГЁГЈГ°Г®ГЄГ 
             }
             else
             {
@@ -110,13 +111,13 @@ public class GameManager : MonoBehaviour
             canvas = Instantiate(data.canvas.gameObject, Vector3.zero, Quaternion.identity).GetComponent<Canvas>();
     }
 
-    public void StopGamePlay() //Остановка игры (Игрока и тд.) 
+    public void StopGamePlay() //ГЋГ±ГІГ Г­Г®ГўГЄГ  ГЁГЈГ°Г» (Г€ГЈГ°Г®ГЄГ  ГЁ ГІГ¤.) 
     {
-        //Выключение игрока и др.
+        //Г‚Г»ГЄГ«ГѕГ·ГҐГ­ГЁГҐ ГЁГЈГ°Г®ГЄГ  ГЁ Г¤Г°.
     }
-    public void StartGameByTap() //Включение при тапе (Игрока и тд.)
+    public void StartGameByTap() //Г‚ГЄГ«ГѕГ·ГҐГ­ГЁГҐ ГЇГ°ГЁ ГІГ ГЇГҐ (Г€ГЈГ°Г®ГЄГ  ГЁ ГІГ¤.)
     {
-        //Включение управления и др.
+        //Г‚ГЄГ«ГѕГ·ГҐГ­ГЁГҐ ГіГЇГ°Г ГўГ«ГҐГ­ГЁГї ГЁ Г¤Г°.
     }
 
     #endregion
@@ -152,19 +153,19 @@ public class GameManager : MonoBehaviour
             StartGame();
         }
 
-        //Старт урованя 
+        //Г‘ГІГ Г°ГІ ГіГ°Г®ГўГ Г­Гї 
     }
     public static void OnLevelEnd(bool win = true)
     {
         instance.StopGamePlay();
         instance.gameStage = GameStage.EndWait;
         EndGame();
-        //Эвенты метрик
-        //Конец уровня
+        //ГќГўГҐГ­ГІГ» Г¬ГҐГІГ°ГЁГЄ
+        //ГЉГ®Г­ГҐГ¶ ГіГ°Г®ГўГ­Гї
     }
     public static void Restart()
     {
-        AdsInitializer.ShownInterstitialAds();
+        instance._interstitialAd.ShowAd();
         SceneManager.LoadScene(0);
     }
     public static void NextLevel()

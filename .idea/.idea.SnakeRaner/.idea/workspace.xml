@@ -1,7 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3a29d4f7-6419-493b-b01f-495e4a7d9b73" name="Changes" comment="" />
+    <list default="true" id="3a29d4f7-6419-493b-b01f-495e4a7d9b73" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.SnakeRaner/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SnakeRaner/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Packs/StylizedWater/Materials/StylizedWater_Mobile.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Packs/StylizedWater/Materials/StylizedWater_Mobile.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Packs/StylizedWater/Materials/Textures/StylizedWater_Desktop_normal_baked.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Packs/StylizedWater/Materials/Textures/StylizedWater_Desktop_normal_baked.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Packs/StylizedWater/Materials/Textures/StylizedWater_Desktop_shadermap_baked.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Packs/StylizedWater/Materials/Textures/StylizedWater_Desktop_shadermap_baked.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Packs/StylizedWater/Materials/Textures/StylizedWater_Mobile_normal_baked.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Packs/StylizedWater/Materials/Textures/StylizedWater_Mobile_normal_baked.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Packs/StylizedWater/Materials/Textures/StylizedWater_Mobile_shadermap_baked.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Packs/StylizedWater/Materials/Textures/StylizedWater_Mobile_shadermap_baked.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/AdsInitializer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/AdsInitializer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Logs/shadercompiler-UnityShaderCompiler.exe0.log" beforeDir="false" afterPath="$PROJECT_DIR$/Logs/shadercompiler-UnityShaderCompiler.exe0.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectVersion.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectVersion.txt" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -53,9 +65,11 @@
       <option name="presentableId" value="Default" />
       <updated>1683129101063</updated>
       <workItem from="1683129127308" duration="1281000" />
+      <workItem from="1683132431409" duration="1221000" />
     </task>
     <servers />
   </component>
+  <component name="UnityCheckinConfiguration" checkUnsavedScenes="true" />
   <component name="UnityProjectConfiguration" hasMinimizedUI="true" />
   <component name="UnityUnitTestConfiguration" currentTestLauncher="EditMode" />
   <component name="VcsManagerConfiguration">

@@ -4,7 +4,7 @@ using UnityEngine.Advertisements;
 public class AdsInitializer : MonoBehaviour, IUnityAdsInitializationListener
 {
     private const string _gameID = "4410523";
-    [SerializeField] bool _testMode = true;
+    [SerializeField] bool _testMode = false;
 
     void Awake()
     {
